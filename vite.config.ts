@@ -13,7 +13,7 @@ export default defineConfig({
   plugins: [
     vue(),
     Pages({
-      importMode: 'sync'
+      exclude: ['**/components/*.vue'],
     }),
     AutoImport({
       imports: ["vue", "vue-router", "pinia"],
