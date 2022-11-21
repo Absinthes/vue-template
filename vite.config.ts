@@ -6,11 +6,15 @@ import Unocss from "unocss/vite";
 import { resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import Pages from "vite-plugin-pages";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
+    Pages({
+      importMode: 'sync'
+    }),
     AutoImport({
       imports: ["vue", "vue-router", "pinia"],
       eslintrc: {
